@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock title %}
+
+{% block content %}
+    <section class="home">
+        <span class="popular-list"><h1>Популярные товары</h1></span>
+        <div class="product-grid">
+            {% for product in products  %}
+                <div class="product-card">
+                    <img src={% if product.image %}{{product.image.url}}{% else %}{% static 'img/noimage.png' %}{% endif %} class="product-image">
+                    <div class="product-details">
+                        <h3 class="product-title">{{product.name}}</h3>
+                        <p class="product-description">{{product.description}}</p>
+                        <div class="size-selection">
+                            <label>
+                                <input type="radio" name="size" value="small" checked>
+                                <span>SMALL</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="size" value="middle">
+                                <span>MIDDLE</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="size" value="large">
+                                <span>LARGE</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="size" value="super-large">
+                                <span>SUPER-LARGE</span>
+                            </label>
+                        </div>
+            
+                        <div class="product-bottom">
+                            <span class="product-price">{{product.price}}</span>
+                            <button class="add-button">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock content %}

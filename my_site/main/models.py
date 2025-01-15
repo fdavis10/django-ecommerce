@@ -30,7 +30,7 @@ class Product(models.Model):
         ('LARGE', 'LARGE'),
         ('SUPERLARGE', 'SUPER-LARGE'))
     
-    size = MultiSelectField(choices=SIZE_PRODUCT, max_choices=6, max_length=20)
+    size = MultiSelectField(choices=SIZE_PRODUCT, max_choices=4, max_length=50)
     description = models.TextField(max_length=250, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
