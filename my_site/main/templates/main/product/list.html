@@ -1,0 +1,89 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Меню{% endblock title %}
+
+{% block content %}
+<section class="home_list">
+    <div class="sidebar">
+        <ul>
+            {% for cat in categories %}
+                <li {% if category and category.slug == cat.slug %}class="selected"{% endif %}>
+                    <a href="{% url 'main:product_list_by_category' category_slug=cat.slug %}">{{ cat.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="category_name">
+    {% if category %}
+    <span class="category_name_font"><h2>Категория: {{ category.name }} </h2></span>
+    </div>
+    <div class="product-grid">
+            {% for product in products %}
+                <div class="product-card">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/noimage.png' %}{% endif %}" class="product-image">
+                    <div class="product-details">
+                        <h3 class="product-title">{{ product.name }}</h3>
+                        <p class="product-description">{{ product.description }}</p>
+                        <div class="size-selection">
+                            <label>
+                                <input type="radio" name="size_{{ product.id }}" value="small" checked>
+                                <span>SMALL</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="size_{{ product.id }}" value="middle">
+                                <span>MIDDLE</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="size_{{ product.id }}" value="large">
+                                <span>LARGE</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="size_{{ product.id }}" value="super-large">
+                                <span>SUPER-LARGE</span>
+                            </label>
+                        </div>
+                        <div class="product-bottom">
+                            <span class="product-price">{{ product.price }}</span>
+                            <button class="add-button">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+        <div class="product-grid">
+            {% for product in products %}
+                <div class="product-card">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/noimage.png' %}{% endif %}" class="product-image">
+                    <div class="product-details">
+                        <h3 class="product-title">{{ product.name }}</h3>
+                        <p class="product-description">{{ product.description }}</p>
+                        <div class="size-selection">
+                            <label>
+                                <input type="radio" name="size_{{ product.id }}" value="small" checked>
+                                <span>SMALL</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="size_{{ product.id }}" value="middle">
+                                <span>MIDDLE</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="size_{{ product.id }}" value="large">
+                                <span>LARGE</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="size_{{ product.id }}" value="super-large">
+                                <span>SUPER-LARGE</span>
+                            </label>
+                        </div>
+                        <div class="product-bottom">
+                            <span class="product-price">{{ product.price }}</span>
+                            <button class="add-button">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>
+{% endblock content %}
