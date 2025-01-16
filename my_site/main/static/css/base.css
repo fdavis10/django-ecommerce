@@ -4,7 +4,18 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     overflow-x: hidden;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
 h1{
     font-weight: bold;

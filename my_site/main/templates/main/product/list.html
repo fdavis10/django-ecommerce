@@ -25,24 +25,17 @@
                     <div class="product-details">
                         <h3 class="product-title">{{ product.name }}</h3>
                         <p class="product-description">{{ product.description }}</p>
-                        <div class="size-selection">
-                            <label>
-                                <input type="radio" name="size_{{ product.id }}" value="small" checked>
-                                <span>SMALL</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="size_{{ product.id }}" value="middle">
-                                <span>MIDDLE</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="size_{{ product.id }}" value="large">
-                                <span>LARGE</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="size_{{ product.id }}" value="super-large">
-                                <span>SUPER-LARGE</span>
-                            </label>
-                        </div>
+                        {% if product.size %}
+                            <div class="size-selection">
+                                {% for size in product.size %}
+                                    <label>
+                                        <input type="radio" name="size_{{ product.id }}" value="{{ size|lower }}" {% if forloop.first %}checked{% endif %}>
+                                        <span>{{ size|capfirst }}</span>
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        
                         <div class="product-bottom">
                             <span class="product-price">{{ product.price }}</span>
                             <button class="add-button">Добавить</button>
@@ -58,24 +51,16 @@
                     <div class="product-details">
                         <h3 class="product-title">{{ product.name }}</h3>
                         <p class="product-description">{{ product.description }}</p>
-                        <div class="size-selection">
-                            <label>
-                                <input type="radio" name="size_{{ product.id }}" value="small" checked>
-                                <span>SMALL</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="size_{{ product.id }}" value="middle">
-                                <span>MIDDLE</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="size_{{ product.id }}" value="large">
-                                <span>LARGE</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="size_{{ product.id }}" value="super-large">
-                                <span>SUPER-LARGE</span>
-                            </label>
-                        </div>
+                        {% if product.size %}
+                            <div class="size-selection">
+                                {% for size in product.size %}
+                                    <label>
+                                        <input type="radio" name="size_{{ product.id }}" value="{{ size|lower }}" {% if forloop.first %}checked{% endif %}>
+                                        <span>{{ size|capfirst }}</span>
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                         <div class="product-bottom">
                             <span class="product-price">{{ product.price }}</span>
                             <button class="add-button">Добавить</button>
