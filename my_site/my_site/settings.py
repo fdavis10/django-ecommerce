@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'my_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pizzamarket',
+        'NAME': 'pizza',
         'USER': 'admindb',
         'PASSWORD': 'admindb',
         'HOST': 'localhost',

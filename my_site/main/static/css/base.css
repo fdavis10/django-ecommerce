@@ -493,3 +493,490 @@ h5{
 .navbar a:hover .cart-item-count {
     background-color: #d1892b; 
 }
+
+/* Новый стиль для страницы оформления заказа */
+.order-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.order-profile {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%;
+}
+
+.order-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #ff9100;
+    box-shadow: 0 0 5px rgba(255, 145, 0, 0.5);
+}
+
+.submit-button {
+    text-align: center;
+}
+
+.submit-btn {
+    background-color: #ff9100;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #d87f00;
+}
+
+.checkout-summary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%;
+}
+
+.checkout-summary h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.order-info {
+    margin-bottom: 20px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.total-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff9100;
+}
+
+/* Новый стиль для страницы создания заказа */
+.created-order-wrapper {
+    max-width: 800px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.created-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.created-description {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.back-to-home {
+    text-decoration: none;
+    background-color: #ff9100;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-home:hover {
+    background-color: #d87f00;
+}
+
+.window {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pay-title {
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* Стили для карточек с товарами в процессе */
+.cart-cardsproc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cart-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cart-card-img img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-card-info {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.cart-card-name p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cart-card-q p {
+    font-size: 14px;
+    color: #555;
+}
+
+.cart-card-price {
+    text-align: right;
+}
+
+.cart-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.line {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.cart-total-price-ots {
+    font-size: 18px;
+    color: #ff9100;
+    font-weight: bold;
+}
+
+.cart-total-price {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Кнопки удаления и оплаты */
+.remove-btn, .paynow {
+    background-color: #ff9100;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.remove-btn:hover, .paynow:hover {
+    background-color: #d87f00;
+}
+
+.castle-div {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.castlep {
+    width: 150px;
+    height: auto;
+    opacity: 0.7;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .window {
+        padding: 15px;
+    }
+
+    .cart-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-card-img img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cart-card-info {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .cart-card-name p {
+        font-size: 16px;
+    }
+
+    .cart-card-q p {
+        font-size: 12px;
+    }
+
+    .cart-total-price {
+        font-size: 16px;
+    }
+
+    .pay-title {
+        font-size: 24px;
+    }
+
+    .castle-div {
+        margin-top: 30px;
+    }
+
+    .castlep {
+        width: 100px;
+    }
+}
+
+/* Общие стили для форм */
+.form-style, .form-styleprofile {
+    font-size: 16px;
+    padding: 12px 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.form-style:focus, .form-styleprofile:focus {
+    outline: none;
+    border-color: #ff9100;
+    box-shadow: 0 0 5px rgba(255, 145, 0, 0.5);
+}
+
+/* Заголовки */
+h2 {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h5 {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Стили для кнопок */
+.profile-btn, .login-btn {
+    background-color: #ff9100;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.profile-btn:hover, .login-btn:hover {
+    background-color: #d87f00;
+}
+
+/* Стили для ссылок */
+.reset-pass a, .notorders {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.reset-pass a:hover, .notorders a:hover {
+    text-decoration: underline;
+}
+
+/* Контейнеры */
+.windowp {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orderss, .order-cart {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.orders-carts {
+    margin-bottom: 10px;
+}
+
+.dadad {
+    font-weight: bold;
+}
+
+/* Изображение аватара */
+.img-fluid {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Блоки формы */
+.first_box, .second_box {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.first_box > div, .second_box > div {
+    flex: 1;
+}
+
+.first_box > div:last-child, .second_box > div:last-child {
+    flex: 1.5;
+}
+
+/* Стили для блока заказов */
+.orders {
+    margin-top: 40px;
+}
+
+.order-cart {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-title {
+    font-size: 20px;
+    color: #333;
+}
+
+.order-desc {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .windowp {
+        padding: 20px;
+    }
+
+    .form-style, .form-styleprofile {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .profile-btn, .login-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .img-fluid {
+        width: 100px;
+        height: 100px;
+    }
+
+    .first_box, .second_box {
+        gap: 10px;
+    }
+
+    .first_box > div, .second_box > div {
+        flex: 1 1 100%;
+    }
+
+    .orderss, .order-cart {
+        padding: 10px;
+    }
+
+    .order-title {
+        font-size: 18px;
+    }
+
+    .order-desc {
+        font-size: 12px;
+    }
+}
+
+.profilee{
+    margin-top: 100px;
+}

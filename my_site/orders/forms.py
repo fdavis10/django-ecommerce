@@ -1,4 +1,4 @@
-from django.forms import forms
+from django import forms
 from .models import Order
 
 class OrderCreateForm(forms.ModelForm):
@@ -11,7 +11,7 @@ class OrderCreateForm(forms.ModelForm):
         self.request = kwargs.pop('request', None)
         super().__init__(*args, **kwargs)
         if self.request.user.is_authenticated:
-            self.initial['first_name'] = self.request.user.fist_name
+            self.initial['first_name'] = self.request.user.first_name
             self.initial['last_name'] = self.request.user.last_name
             self.initial['email'] = self.request.user.email
 

@@ -30,12 +30,6 @@
             {% endwith %}
         {% endfor %}
     </div>
-    <div class="cart-footer">
-        <a href="/menu" class="cart-btn back-btn">Продолжить покупки</a>
-        {% if cart|length > 0 %}
-            <a href="#" class="cart-btn checkout-btn">Перейти к оплате</a>
-        {% endif %}
-    </div>
     <div class="cart-summary">
         <p class="cart-total-label">Итоговая сумма:</p>
         <p class="cart-total-price">{{ cart.get_total_price }} руб.</p>
@@ -43,7 +37,7 @@
     <div class="cart-footer">
         <a href="/menu" class="cart-btn back-btn">Продолжить покупки</a>
         {% if cart|length > 0 %}
-            <a href="#" class="cart-btn checkout-btn">Перейти к оплате</a>
+            <a href="{% url 'orders:order_create' %}" class="cart-btn checkout-btn">Перейти к оплате</a>
         {% endif %}
     </div>
 </section>

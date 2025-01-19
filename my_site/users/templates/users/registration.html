@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Регистрация{% endblock title %}
+
+{% block content %}
+<section class='login'>
+    <div class="login-title">
+        <h2>Регистрация</h2>
+        <form action="{% url 'users:register' %}" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_username" class="form-label form-style">Имя пользователя</label>
+                <input type="text" class="form-control form-style" name="username" id="id_username"
+                placeholder="Input username" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_password" class="form-label form-style">Пароль</label>
+                <input type="password" class="form-control form-style" name="password" id="id_password"
+                placeholder="Your password" required>
+            </div>
+            <button type="submit" class="login-btn form-style">Зарегистрироваться</button>
+        </form>
+        <div class="reset-pass">
+            <hr>
+            <div>
+                <a href="#">Забыли пароль?</a> | <a href="{% url "users:login" %}">Уже есть аккаунт?</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
