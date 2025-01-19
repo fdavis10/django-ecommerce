@@ -317,7 +317,7 @@ h5{
     padding: 5px;
 }
 
-/* Стили для страницы корзины */
+
 .cart {
     max-width: 900px;
     margin: 100px auto 50px;
@@ -494,7 +494,7 @@ h5{
     background-color: #d1892b; 
 }
 
-/* Новый стиль для страницы оформления заказа */
+
 .order-wrapper {
     display: flex;
     justify-content: space-between;
@@ -597,7 +597,7 @@ h5{
     color: #ff9100;
 }
 
-/* Новый стиль для страницы создания заказа */
+
 .created-order-wrapper {
     max-width: 800px;
     margin: 100px auto;
@@ -652,7 +652,7 @@ h5{
     font-weight: bold;
 }
 
-/* Стили для карточек с товарами в процессе */
+
 .cart-cardsproc {
     display: flex;
     flex-direction: column;
@@ -726,7 +726,7 @@ h5{
     font-weight: bold;
 }
 
-/* Кнопки удаления и оплаты */
+
 .remove-btn, .paynow {
     background-color: #ff9100;
     color: white;
@@ -754,7 +754,7 @@ h5{
     opacity: 0.7;
 }
 
-/* Адаптивность */
+
 @media (max-width: 768px) {
     .window {
         padding: 15px;
@@ -800,7 +800,7 @@ h5{
     }
 }
 
-/* Общие стили для форм */
+
 .form-style, .form-styleprofile {
     font-size: 16px;
     padding: 12px 18px;
@@ -817,7 +817,7 @@ h5{
     box-shadow: 0 0 5px rgba(255, 145, 0, 0.5);
 }
 
-/* Заголовки */
+
 h2 {
     font-size: 28px;
     color: #333;
@@ -832,7 +832,7 @@ h5 {
     font-weight: bold;
 }
 
-/* Стили для кнопок */
+
 .profile-btn, .login-btn {
     background-color: #ff9100;
     color: white;
@@ -851,7 +851,7 @@ h5 {
     background-color: #d87f00;
 }
 
-/* Стили для ссылок */
+
 .reset-pass a, .notorders {
     font-size: 14px;
     color: #007bff;
@@ -862,7 +862,7 @@ h5 {
     text-decoration: underline;
 }
 
-/* Контейнеры */
+
 .windowp {
     max-width: 800px;
     margin: 0 auto;
@@ -888,7 +888,7 @@ h5 {
     font-weight: bold;
 }
 
-/* Изображение аватара */
+
 .img-fluid {
     border-radius: 50%;
     width: 120px;
@@ -897,7 +897,7 @@ h5 {
     margin-bottom: 20px;
 }
 
-/* Блоки формы */
+
 .first_box, .second_box {
     display: flex;
     gap: 20px;
@@ -912,7 +912,7 @@ h5 {
     flex: 1.5;
 }
 
-/* Стили для блока заказов */
+
 .orders {
     margin-top: 40px;
 }
@@ -935,7 +935,7 @@ h5 {
     color: #555;
 }
 
-/* Адаптивность */
+
 @media (max-width: 768px) {
     .windowp {
         padding: 20px;
