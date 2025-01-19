@@ -35,7 +35,7 @@ class Product(models.Model):
         ('Средний', 'Средний'),
         ('Большой', 'Большой'))
     
-    size = MultiSelectField(choices=SIZE_PRODUCT, max_choices=4, max_length=50)
+    size = MultiSelectField(choices=SIZE_PRODUCT, max_choices=4, max_length=50, blank=True)
     description = models.TextField(max_length=250, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
