@@ -11,7 +11,11 @@
 <body>
     <header class="navbar">
         <a href="/menu" class="active">Меню</a>
-        <a href="#cart">Корзина</a>
+        <a href="/cart">Корзина
+            {% if cart_item_count > 0 %}
+                <span class="cart-item-count">{{ cart_item_count }}</span>
+            {% endif %}
+        </a>
         <a href="#contacts">Контакты</a>
         <a href="#about">О нас</a>
     </header>

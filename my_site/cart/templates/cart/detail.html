@@ -1,0 +1,50 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Корзина{% endblock title %}
+
+{% block content %}
+<section class="cart">
+    <div class="cart-header">
+        <h1>Корзина</h1>
+        <p class="cart-description">Ваши выбранные товары готовы к оформлению!</p>
+    </div>
+    <div class="cart-products">
+        {% for item in cart %}
+            {% with product=item.product %}
+                <div class="cart-product">
+                    <div class="cart-product-img">
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/noimage.png' %}{% endif %}" alt="{{ product.name }}">
+                    </div>
+                    <div class="cart-product-info">
+                        <p class="cart-product-name">{{ product.name }}</p>
+                        <p class="cart-product-quantity">Количество: {{ item.quantity }}</p>
+                        <p class="cart-product-price">Цена: {{ product.price }} руб.</p>
+                        <p class="cart-product-size">Размер: {{item.size}}</p>
+                    </div>
+                    <form action="{% url 'cart:cart_remove' product.id %}" method="post" class="remove-form">
+                        {% csrf_token %}
+                        <input type="submit" value="Убрать" class="remove-btn">
+                    </form>
+                </div>
+            {% endwith %}
+        {% endfor %}
+    </div>
+    <div class="cart-footer">
+        <a href="/menu" class="cart-btn back-btn">Продолжить покупки</a>
+        {% if cart|length > 0 %}
+            <a href="#" class="cart-btn checkout-btn">Перейти к оплате</a>
+        {% endif %}
+    </div>
+    <div class="cart-summary">
+        <p class="cart-total-label">Итоговая сумма:</p>
+        <p class="cart-total-price">{{ cart.get_total_price }} руб.</p>
+    </div>
+    <div class="cart-footer">
+        <a href="/menu" class="cart-btn back-btn">Продолжить покупки</a>
+        {% if cart|length > 0 %}
+            <a href="#" class="cart-btn checkout-btn">Перейти к оплате</a>
+        {% endif %}
+    </div>
+</section>
+{% endblock content %}

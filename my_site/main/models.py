@@ -27,10 +27,13 @@ class Product(models.Model):
     image = models.FileField(blank=True, upload_to='pass')
 
     SIZE_PRODUCT = (
-        ('SMALL', 'SMALL'),
-        ('MIDDLE', 'MIDDLE'),
-        ('LARGE', 'LARGE'),
-        ('SUPERLARGE', 'SUPER-LARGE'))
+        ('S', 'S'),
+        ('M', 'M'),
+        ('L', 'L'),
+        ('XXL', 'XXL'),
+        ('Маленький', 'Маленький'),
+        ('Средний', 'Средний'),
+        ('Большой', 'Большой'))
     
     size = MultiSelectField(choices=SIZE_PRODUCT, max_choices=4, max_length=50)
     description = models.TextField(max_length=250, blank=True)

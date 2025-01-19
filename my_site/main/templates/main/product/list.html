@@ -18,57 +18,47 @@
     {% if category %}
     <span class="category_name_font"><h2>Категория: {{ category.name }} </h2></span>
     </div>
+    {% endif %}
     <div class="product-grid">
-            {% for product in products %}
-                <div class="product-card">
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/noimage.png' %}{% endif %}" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-title">{{ product.name }}</h3>
-                        <p class="product-description">{{ product.description }}</p>
+        {% for product in products %}
+            <div class="product-card">
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/noimage.png' %}{% endif %}" class="product-image">
+                <div class="product-details">
+                    <h3 class="product-title">{{ product.name }}</h3>
+                    <p class="product-description">{{ product.description }}</p>
+                    
+                    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                        {% csrf_token %}
                         {% if product.size %}
                             <div class="size-selection">
                                 {% for size in product.size %}
                                     <label>
-                                        <input type="radio" name="size_{{ product.id }}" value="{{ size|lower }}" {% if forloop.first %}checked{% endif %}>
+                                        <input type="radio" name="size" value="{{ size|lower }}" {% if forloop.first %}checked{% endif %}>
                                         <span>{{ size|capfirst }}</span>
                                     </label>
                                 {% endfor %}
                             </div>
                         {% endif %}
                         
-                        <div class="product-bottom">
-                            <span class="product-price">{{ product.price }}</span>
-                            <button class="add-button">Добавить</button>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        {% else %}
-        <div class="product-grid">
-            {% for product in products %}
-                <div class="product-card">
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/noimage.png' %}{% endif %}" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-title">{{ product.name }}</h3>
-                        <p class="product-description">{{ product.description }}</p>
-                        {% if product.size %}
-                            <div class="size-selection">
-                                {% for size in product.size %}
-                                    <label>
-                                        <input type="radio" name="size_{{ product.id }}" value="{{ size|lower }}" {% if forloop.first %}checked{% endif %}>
-                                        <span>{{ size|capfirst }}</span>
-                                    </label>
+                        <div class="quantity">
+                            <label for="quantity_{{ product.id }}">Количество:</label>
+                            <select id="quantity_{{ product.id }}" name="quantity">
+                                {% for i in form.quantity.field.choices %}
+                                    <option value="{{ i.0 }}">{{ i.1 }}</option>
                                 {% endfor %}
-                            </div>
-                        {% endif %}
-                        <div class="product-bottom">
-                            <span class="product-price">{{ product.price }}</span>
-                            <button class="add-button">Добавить</button>
+                            </select>
                         </div>
+                        
+                        <input type="hidden" name="override" value="False">
+                        <button type="submit" class="add-button">Добавить</button>
+                    </form>
+
+                    <div class="product-bottom">
+                        <span class="product-price">{{ product.price }}</span>
                     </div>
                 </div>
-            {% endfor %}
-        {% endif %}
+            </div>
+        {% endfor %}
     </div>
 </section>
 {% endblock content %}
