@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-aioh#6rl4^ssneg#_v!rj9i1@h+w_uw&_v9%vp4_o8e+*#afqe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'my_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pizza',
-        'USER': 'admindb',
-        'PASSWORD': 'admindb',
+        'ENGINE': 'django.db.backends.postgresql', # Change to django.db.backends.sqlite3 if you want to use SQLite
+        'NAME': '', # DATABASE NAME
+        'USER': '', # DATABASE USER
+        'PASSWORD': '', # DATABASE PASSWORD
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -139,8 +139,8 @@ CART_SESSION_ID = 'cart'
 
 AUTH_USER_MODEL = 'users.User'
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51Qfh9XFjhAWrKqBKWcbQOIax7LRjROGhWp66lR1JCQi7wvvsPHgiU2PRu21MgzFGgauxOSkTt6gfOpw4DiARxFF700hJmSCKf7'
-STRIPE_SECRET_KEY = 'sk_test_51Qfh9XFjhAWrKqBKreGD65xeSiiCFZ4WCrSPgnql6eseErJWqReSivUcsVB3k7ioMnN219nDPFy5dySi1XXJQI5Y00nonqKiwr'
+STRIPE_PUBLISHABLE_KEY = '' # Use your public stripe key
+STRIPE_SECRET_KEY = '' # Use your secret stripe key
 STRIPE_API_VERSION = '2022-08-01'
 
-STRIPE_WEBHOOK_SECRET = 'whsec_22d7404df716ed3dc17e6b80324bf09170b8b51ee7d106f4a011d642f62a7739'
+STRIPE_WEBHOOK_SECRET = '' # Use you weebhook key

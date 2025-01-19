@@ -10,24 +10,24 @@
             <form action="" method="post" class="order-form">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="id_first_name" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="id_first_name" name="first_name" placeholder="Your First Name" value="{{ form.first_name.value|default:'' }}" required>
+                    <label for="id_first_name" class="form-label">Ваше Имя</label>
+                    <input type="text" class="form-control" id="id_first_name" name="first_name" placeholder="Иван" value="{{ form.first_name.value|default:'' }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="id_last_name" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="id_last_name" name="last_name" placeholder="Your Last Name" value="{{ form.last_name.value|default:'' }}" required>
+                    <label for="id_last_name" class="form-label">Ваша Фамилия</label>
+                    <input type="text" class="form-control" id="id_last_name" name="last_name" placeholder="Иванов" value="{{ form.last_name.value|default:'' }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="id_email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="id_email" name="email" placeholder="Your Email" value="{{ form.email.value|default:'' }}" required>
+                    <label for="id_email" class="form-label">Ваша Электронная почта</label>
+                    <input type="text" class="form-control" id="id_email" name="email" placeholder="ivan@ivanov.ru" value="{{ form.email.value|default:'' }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="id_address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="id_address" name="address" placeholder="Your Address" value="{{ form.address.value|default:'' }}" required>
+                    <label for="id_address" class="form-label">Ваш Адресс</label>
+                    <input type="text" class="form-control" id="id_address" name="address" placeholder="Улица Пушкина 31, кв.2" value="{{ form.address.value|default:'' }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="id_city" class="form-label">City</label>
-                    <input type="text" class="form-control" id="id_city" name="city" placeholder="Your City" value="{{ form.city.value|default:'' }}" required>
+                    <label for="id_city" class="form-label">Город</label>
+                    <input type="text" class="form-control" id="id_city" name="city" placeholder="Москва" value="{{ form.city.value|default:'' }}" required>
                 </div>
                 <div class="submit-button">
                     <input type="submit" class="submit-btn" value="Потвердить">

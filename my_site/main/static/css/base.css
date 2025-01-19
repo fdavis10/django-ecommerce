@@ -981,3 +981,122 @@ h5 {
 .profilee{
     margin-top: 100px;
 }
+
+.btns {
+    display: flex;
+    gap: 15px; 
+    margin-top: 20px;
+    justify-content: flex-start; 
+}
+
+.profile-btn {
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover {
+    background-color: #45a049;
+}
+
+.profile-btn:last-child {
+    background-color: #f44336; 
+}
+
+.profile-btn:last-child:hover {
+    background-color: #d32f2f; 
+}
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+    background-color: #f9f9f9; 
+}
+
+.login-title {
+    margin: 100px auto;
+    background: white; 
+    padding: 40px 30px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 400px; 
+    text-align: center;
+}
+
+.login-title h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #ff9100; 
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+.login-btn {
+    background-color: #ff9100;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #d87f00;
+}
+
+.reset-pass {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.reset-pass a {
+    color: #ff9100;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.reset-pass a:hover {
+    color: #d87f00; 
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 20px 0;
+}
+

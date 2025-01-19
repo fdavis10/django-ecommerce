@@ -21,11 +21,11 @@
                                     <p>{{ product.name }}</p>
                                 </div>
                                 <div class="cart-card-q">
-                                    <p>Quantity: {{ item.quantity }}</p>
+                                    <p>Количество: {{ item.quantity }}</p>
                                 </div>
                             </div>
                             <form action="{% url "cart:cart_remove" product.id %}" method="post">
-                                <input type="submit" value="Remove" class="remove-btn">
+                                <input type="submit" value="Убрать" class="remove-btn">
                                 {% csrf_token %}
                             </form>
                             <div class="cart-card-price">
@@ -35,7 +35,7 @@
                                         <p class="cart-total-price-ots">$ {{ product.sell_price }}</p>
                                     </div>
                                 {% else %}
-                                    <p class="cart-total-price">$ {{ product.price }}</p>
+                                    <p class="cart-total-price">{{ product.price }}</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -43,12 +43,9 @@
                 {% endfor %}
 
                 <form action="{% url "payment:process" %}" method="post" class="payform">
-                    <input type="submit" value="Pay now" class="paynow">
+                    <input type="submit" value="Оплатить" class="paynow">
                     {% csrf_token %}
                 </form>
-            </div>
-            <div class="castle-div">
-                <img src="{% static 'img/castle.png' %}" class="castlep" alt="">
             </div>
         </div>
     </div>
